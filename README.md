@@ -25,10 +25,10 @@ data on iOS.
 ---------------
 
 Before receiving GPS data you'll need a GPS location streamer. I 
-designed an app for this purpose.
+designed an app for this purpose.  
 I's called **LE GPS**, available here: 
-	* iOS - [soon](http://itunes.com)
-	* Android - coming soon
+*	iOS - [soon](http://itunes.com)
+*	Android - coming soon
 
 Other devices can be used to stream location data over BT4.0, such
 as Arduino or Rapsberry Pi embedded systems.
@@ -39,8 +39,8 @@ as Arduino or Rapsberry Pi embedded systems.
 Now that you have a GPS data streamer, you'll need to include this framework on
 you iOS app to receive the data.
 Versions requirements:
-	* min iOS on device: 7.0
-	* min iOS SDK on Xcode: 7.0
+	*	min iOS on device: 7.0
+	*	min iOS SDK on Xcode: 7.0
 
 Just download this framework, copy it on your project repository.
 Once done, drag and drop this framework over your Xcode interface Frameworks.
@@ -52,8 +52,8 @@ LELocation is not there, click on + to add it.
 
 Other mandatory frameworks:
 You'll need to link your project with standard framework:
-	* CoreLocation
-	* CoreBluetooth
+	*	CoreLocation
+	*	CoreBluetooth
 
 4 - Framework usage
 -------------------
