@@ -38,7 +38,7 @@ as Arduino or Rapsberry Pi embedded systems.
 
 Now that you have a GPS data streamer, you'll need to include this framework on
 you iOS app to receive the data.
-Versions requirements:
+Versions requirements:  
 	*	min iOS on device: 7.0
 	*	min iOS SDK on Xcode: 7.0
 
@@ -51,7 +51,7 @@ Select your target, go to general tab and check 'linked Frameworks and libraries
 LELocation is not there, click on + to add it.
 
 Other mandatory frameworks:
-You'll need to link your project with standard framework:
+You'll need to link your project with standard framework:  
 	*	CoreLocation
 	*	CoreBluetooth
 
