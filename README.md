@@ -21,13 +21,13 @@ This framework simplifies the developpers work for reading GPS stream by
 abstracting the bluetooth work behind a standard API using CoreLocation 
 data on iOS.
 
-2 - GPS emmiter
+2 - GPS transmitter
 ---------------
 
 Before receiving GPS data you'll need a GPS location streamer. I 
 designed an app for this purpose.  
-I's called **LE GPS**, available here: 
-*	iOS - [soon](http://itunes.com)
+It's called **LE GPS**, available here: 
+*	iOS - [App Store](http://appstore.com/legps)
 *	Android - coming soon
 
 Other devices can be used to stream location data over BT4.0, such
