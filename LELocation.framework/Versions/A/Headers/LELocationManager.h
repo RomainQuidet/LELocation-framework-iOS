@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, LELocationManagerState) {
  *
  *  Discussion:
  *      Start bluetooth connection with the GPS and once done updates location.
+ *      GPS search will timeout after 6s if LE GPS is not found
  */
 - (void)startUpdatingLocation;
 

@@ -10,9 +10,10 @@
 #import "LELocationManager.h"
 
 typedef NS_ENUM(NSUInteger, LELocationManagerError) {
-    LELocationManagerErrorSuccess = 0,
+    LELocationManagerErrorNone = 0,
     LELocationManagerErrorBluetoothOff,
     LELocationManagerErrorBluetoothUnauthorized,
+    LELocationManagerErrorGPSNotFound,
     LELocationManagerErrorGPSConnectionFailed,
     LELocationManagerErrorGPSDidDisconnect
 };
