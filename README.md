@@ -2,8 +2,8 @@ LELocation-framework-iOS
 ========================
 
 Bluetooth 4.0 LE framework for easy integration of Location and
-Navigation Service stream reception and interface it with standard 
-CoreLocation data
+Navigation Service stream reception. Get standard CoreLocation data
+in your app.
 
 1 - Summary
 -----------
@@ -38,6 +38,9 @@ as Arduino or Rapsberry Pi embedded systems.
 
 Now that you have a GPS data streamer, you'll need to include this framework on
 you iOS app to receive the data.
+
+You can get LELocation framework as a Pod from CocoaPods or install it manually:
+
 Versions requirements:  
 *	min iOS on device: 7.0
 *	min iOS SDK on Xcode: 7.0
