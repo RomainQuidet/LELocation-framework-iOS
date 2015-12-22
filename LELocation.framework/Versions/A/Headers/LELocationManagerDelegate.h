@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LELocationManager.h"
 
+/**
+ The manager error types returned by the callback
+ */
 typedef NS_ENUM(NSUInteger, LELocationManagerError) {
     LELocationManagerErrorNone = 0,
     LELocationManagerErrorBluetoothOff,
@@ -21,24 +24,18 @@ typedef NS_ENUM(NSUInteger, LELocationManagerError) {
 @protocol LELocationManagerDelegate <NSObject>
 
 @optional
-/*
- *  locationManager:didUpdateLocations:
- *
- *  Discussion:
- *    Invoked when new locations are available.  Required for delivery of
- *    deferred locations.  If implemented, updates will
- *    not be delivered to locationManager:didUpdateToLocation:fromLocation:
- *
- *    locations is an array of CLLocation objects in chronological order.
+/**
+ Invoked when new locations are available.
+ @param manager The LELocationManager caller
+ @param locations An array of CLLocation objects in chronological order.
  */
 - (void)locationManager:(LELocationManager *)manager
 	 didUpdateLocations:(NSArray *)locations __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_7_0);
 
-/*
- *  locationManager:didFailWithError:
- *
- *  Discussion:
- *    Invoked when an error has occurred.
+/**
+ Invoked when an error has occurred.
+ @param manager The LELocationManager caller
+ @param error The LELocationManagerError error
  */
 - (void)locationManager:(LELocationManager *)manager
        didFailWithError:(LELocationManagerError)error;

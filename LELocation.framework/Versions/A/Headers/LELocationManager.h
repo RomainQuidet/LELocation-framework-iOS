@@ -9,12 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
 
-/*
- *  LELocationManagerState
- *
- *  Discussion:
- *      Represents the current state of the manager.
- *
+/**
+ The possible manager states.
  */
 typedef NS_ENUM(NSUInteger, LELocationManagerState) {
     LELocationManagerStateUnknown = 0,
@@ -24,62 +20,58 @@ typedef NS_ENUM(NSUInteger, LELocationManagerState) {
 };
 
 @protocol LELocationManagerDelegate;
+
+/**
+ 'LELocationManager' is a class that mimic the official CoreLocation class
+ by providing a source of GPS positions as CLLocation objects.
+ The source of GPS positions is not the internal GPS (Wifi iPad do not have
+ internal GPS for example) but a standard Bluetooth Smart (Low Energy) GPS
+ transmitter. An example of such a transmitter is the app 'LE GPS' installed
+ on in iPhone. 
+ More information about the transmitters here: 
+ http://www.xdappfactory.com/wp/?page_id=181
+ */
 @interface LELocationManager : NSObject
 
-/*
- *  sharedManager
- *
- *  Discussion:
- *      Returns the Low Energy Location manager singleton
+/**
+ Use this singleton as entry point for LELocation framework.
+ @return The Low Energy Location manager singleton. First call
+ returns the singleton initialized, ready to use in idle state.
  */
 + (LELocationManager *)sharedManager;
 
-/*
- *  startUpdatingLocation
- *
- *  Discussion:
- *      Start bluetooth connection with the GPS and once done updates location.
- *      GPS search will timeout after 6s if LE GPS is not found
+/**
+ Start the bluetooth GPS search and pairing process. Once done updates location
+ by callbacks.
+ GPS search will timeout after 6s if LE GPS transmitter is not found for battery
+ saving.
+ @see LELocationManagerDelegate
  */
 - (void)startUpdatingLocation;
 
-/*
- *  stopUpdatingLocation
- *
- *  Discussion:
- *      Stop updating location and disconnect bluetooth links.
+/**
+ Stop updating location and disconnect the bluetooth GPS link.
  */
 - (void)stopUpdatingLocation;
 
-/*
- * location
- *
- * Discussion:
- *      The value of this property is nil if no location data has ever been retrieved.
+/**
+ The last known location sent by the GPS.
+ The value of this property is nil if no location data has ever been retrieved.
  */
 @property(readonly, nonatomic) CLLocation *location;
 
-/*
- * delegate
- *
- * Discussion:
- *      The delegate will receive callback messages from the LELocationManagerDelegate protocol
+/**
+ The delegate will receive callback messages from the LELocationManagerDelegate protocol.
  */
 @property(weak, nonatomic) id<LELocationManagerDelegate> delegate;
 
-/*
- * state
- *
- * Discussion:
- *      Describes the current manager state
+/**
+ Describes the current manager state
  */
 @property (readonly) LELocationManagerState state;
 
-/*
- * version
- *
- * Discussion:
- *      Returns the current version of the framework as @"1.0"
+/**
+ The current version of the framework as @"1.0"
  */
 @property (readonly) NSString *version;
 
