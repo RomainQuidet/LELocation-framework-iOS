@@ -1,11 +1,11 @@
-###v1.2
+###v1.2 23/12/2015
 - adding API documentation in Appledoc format
 - correct location course bug (was always 0.0)
 
-###v1.1
+###v1.1 18/11/2015
 - add GPS scan timeout (6 seconds) to save energy
 - correct small internal bug
 
-###v1.0
+###v1.0 16/07/2014
 - initial public release
 
