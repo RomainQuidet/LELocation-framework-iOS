@@ -8,7 +8,7 @@ in your app.
 1 - Summary
 -----------
 
-On one hand, you need a GPS aware device like an iPhone. One the other hand 
+On one hand, you need a GPS aware device like an iPhone. On the other hand 
 you have a device which needs GPS ccordinates but does not have any GPS 
 embedded, like an iPad.
 
