@@ -58,6 +58,10 @@ You'll need to link your project with standard framework:
 *	CoreLocation
 *	CoreBluetooth
 
+>Please note that this framework will only work on Bluetooth 4.0 capable devices. You can 
+still use it on devices without Bluetooth 4.0 capabilities (like iPad 2), it will only
+fail trying to start GPS pairing.
+
 4 - Framework usage
 -------------------
 
@@ -65,10 +69,27 @@ Once the framework added, you can start using it.
 Import the files "LELocationManager.h" to get access to the API.
 You'll have access to the LELocationManager singleton. It will handle the Bluetooth
 stuff for you. 
+
 You basically just need to call the startUpdatingLocation and stopUpdatingLocation
 methods start and stop getting location.
+
+```
+// start pairing with LE GPS and get locations
+[LELocationManager sharedManager].delegate = self;
+[[LELocationManager sharedManager] startUpdatingLocation];
+```
+
 A delegate protocol is available with "LELocationManagerDelegate.h" to get callbacks
 once a location data is available.
+
+Check the manager state property when you need to know the current state, if the
+manager is idled, searching for the GPS or paired and streaming locations.
+
+If the GPS is not found after 6 seconds, the manager will go back to idle state.
+
+>The Bluetooth on iOS has to be turned on by the user, it's not possible to toggle 
+the power programmatically. A typical callback error is LELocationManagerErrorBluetoothOff.
+You need to ask the user to turn on Bluetooth.
 
 Enjoy !!
 
