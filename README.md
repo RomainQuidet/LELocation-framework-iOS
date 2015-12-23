@@ -65,27 +65,45 @@ fail trying to start GPS pairing.
 4 - Framework usage
 -------------------
 
-Once the framework added, you can start using it.
-Import the files "LELocationManager.h" to get access to the API.
+Once the framework added to your project, using it is very simple.
+
+Import the file "LELocationManager.h" to get access to the API.
+
 You'll have access to the LELocationManager singleton. It will handle the Bluetooth
 stuff for you. 
 
-You basically just need to call the startUpdatingLocation and stopUpdatingLocation
-methods start and stop getting location.
+### Getting locations
+
+You basically just need to set a delegate object and then call the startUpdatingLocation 
+method:
 
 ```
 // start pairing with LE GPS and get locations
 [LELocationManager sharedManager].delegate = self;
 [[LELocationManager sharedManager] startUpdatingLocation];
 ```
+The startUpdatingLocation method will check the Bluetooth state, start LE GPS scan and
+pairing, then handle the stream to create standard CoreLocation locations.
 
-A delegate protocol is available with "LELocationManagerDelegate.h" to get callbacks
-once a location data is available.
-
-Check the manager state property when you need to know the current state, if the
-manager is idled, searching for the GPS or paired and streaming locations.
+The delegate protocol is available with "LELocationManagerDelegate.h" to get callbacks
+for locations data and error handling.
 
 If the GPS is not found after 6 seconds, the manager will go back to idle state.
+
+### Getting manager state
+
+Check the manager state property when you need to know the current state, if the
+manager is idle, searching for the GPS or paired and streaming locations.
+
+### Stopping 
+
+Call the stopUpdatingLocation method to close the bluetooth stream and stop getting
+locations.
+
+```
+// stop getting locations
+[[LELocationManager sharedManager] stopUpdatingLocation];
+```
 
 >The Bluetooth on iOS has to be turned on by the user, it's not possible to toggle 
 the power programmatically. A typical callback error is LELocationManagerErrorBluetoothOff.
