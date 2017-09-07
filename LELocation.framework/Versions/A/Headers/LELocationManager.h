@@ -3,11 +3,13 @@
 //  LELocation framework
 //
 //  Created by Romain Quidet on 27/04/2014.
-//  Copyright (c) 2014 xdappfactory. All rights reserved.
+//  Copyright (c) 2017 xdappfactory. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  The possible manager states.
@@ -43,7 +45,7 @@ typedef NS_ENUM(NSUInteger, LELocationManagerState) {
 /**
  Start the bluetooth GPS search and pairing process. Once done updates location
  by callbacks.
- GPS search will timeout after 6s if LE GPS transmitter is not found for battery
+ GPS search will timeout after 10s if LE GPS transmitter is not found for battery
  saving.
  @see LELocationManagerDelegate
  */
@@ -71,8 +73,17 @@ typedef NS_ENUM(NSUInteger, LELocationManagerState) {
 @property (readonly) LELocationManagerState state;
 
 /**
+ Try to perform a wider BT scan for non standard devices like the GL-770 GPS
+ GPS search will timeout after 20s
+ NO by default.
+ */
+@property (nonatomic, assign) BOOL wideScan;
+
+/**
  The current version of the framework as @"1.0"
  */
 @property (readonly) NSString *version;
 
 @end
+
+NS_ASSUME_NONNULL_END

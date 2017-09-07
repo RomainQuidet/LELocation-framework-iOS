@@ -9,7 +9,7 @@ in your app.
 -----------
 
 On one hand, you need a GPS aware device like an iPhone. On the other hand 
-you have a device which needs GPS ccordinates but does not have any GPS 
+you have a device which needs GPS coordinates but does not have any GPS 
 embedded, like an iPad.
 
 Bluetooth Consortium offers a standard interface to share location data over 
@@ -42,8 +42,8 @@ you iOS app to receive the data.
 You can get LELocation framework as a Pod from CocoaPods or install it manually:
 
 Versions requirements:  
-*	min iOS on device: 7.0
-*	min iOS SDK on Xcode: 7.0
+*	min iOS on device: 8.0
+*	min iOS SDK on Xcode: 8.0
 
 Just download this framework, copy it on your project repository.
 Once done, drag and drop this framework over your Xcode interface Frameworks.
@@ -110,5 +110,10 @@ the power programmatically. A typical callback error is LELocationManagerErrorBl
 You need to ask the user to turn on Bluetooth.
 
 Enjoy !!
+
+5 - History
+-------------------------
+
+v1.4: more robust parser, GL770 GPS support, iOS 8 min, swift compatible headers
 
 Romain

@@ -3,7 +3,7 @@
 //  LELocation framework
 //
 //  Created by Romain Quidet on 28/06/2014.
-//  Copyright (c) 2014 xdappfactory. All rights reserved.
+//  Copyright (c) 2017 xdappfactory. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,6 +21,8 @@ typedef NS_ENUM(NSUInteger, LELocationManagerError) {
     LELocationManagerErrorGPSDidDisconnect
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol LELocationManagerDelegate <NSObject>
 
 @optional
@@ -30,7 +32,7 @@ typedef NS_ENUM(NSUInteger, LELocationManagerError) {
  @param locations An array of CLLocation objects in chronological order.
  */
 - (void)locationManager:(LELocationManager *)manager
-	 didUpdateLocations:(NSArray *)locations __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_7_0);
+	 didUpdateLocations:(NSArray *)locations __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_7_0);
 
 /**
  Invoked when an error has occurred.
@@ -41,3 +43,5 @@ typedef NS_ENUM(NSUInteger, LELocationManagerError) {
        didFailWithError:(LELocationManagerError)error;
 
 @end
+
+NS_ASSUME_NONNULL_END
