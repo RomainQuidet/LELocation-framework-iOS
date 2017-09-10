@@ -1,3 +1,8 @@
+###v1.4 07/09/2017
+- more robust parser
+- add GL770 GPS support
+- swift compatible headers
+
 ###v1.2 23/12/2015
 - adding API documentation in Appledoc format
 - correct location course bug (was always 0.0)
