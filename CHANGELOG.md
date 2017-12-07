@@ -1,3 +1,7 @@
+###v1.5.0 07/12/2017
+- correct GL770 time and elevation
+- decoded time is now UTC
+
 ###v1.4 07/09/2017
 - more robust parser
 - add GL770 GPS support

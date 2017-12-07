@@ -111,9 +111,5 @@ You need to ask the user to turn on Bluetooth.
 
 Enjoy !!
 
-5 - History
--------------------------
-
-v1.4: more robust parser, GL770 GPS support, iOS 8 min, swift compatible headers
 
 Romain
