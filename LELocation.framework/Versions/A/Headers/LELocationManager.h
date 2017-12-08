@@ -58,9 +58,9 @@ typedef NS_ENUM(NSUInteger, LELocationManagerState) {
 
 /**
  The last known location sent by the GPS.
- The value of this property is nil if no location data has ever been retrieved.
+ This property is nil if no location data has ever been retrieved.
  */
-@property(readonly, nonatomic) CLLocation *location;
+@property(readonly, nonatomic, nullable) CLLocation *location;
 
 /**
  The delegate will receive callback messages from the LELocationManagerDelegate protocol.

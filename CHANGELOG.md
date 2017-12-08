@@ -1,3 +1,6 @@
+###v1.5.1 08/12/2017
+- correct negative elevation
+
 ###v1.5.0 07/12/2017
 - correct GL770 time and elevation
 - decoded time is now UTC
